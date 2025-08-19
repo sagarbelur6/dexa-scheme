@@ -24,6 +24,8 @@ class SegmentOccurrence:
 class ParsedInputRecordDetails:
 	# Map of segment base name -> ordered list of element code strings (top-level only)
 	segment_to_elements: Dict[str, List[str]] = field(default_factory=dict)
+	# Map of segment base name -> composite name -> ordered list of element code strings (sub-codes)
+	segment_to_composites: Dict[str, Dict[str, List[str]]] = field(default_factory=dict)
 
 
 @dataclass
@@ -108,11 +110,12 @@ class SchemaParser:
 		# Top-level numeric element code (e.g., 0128* or 0140:2*)
 		element_code_re = re.compile(r"^\s*(\d{3,4})(?::\d+)?\*\s+")
 		# Composite header line inside segment details (e.g., C040*)
-		composite_hdr_re = re.compile(r"^\s*[A-Z][A-Z0-9]{2,}\*\s*$")
+		composite_hdr_re = re.compile(r"^\s*([A-Z][A-Z0-9]{2,})\*")
 
 		segment_to_elements: Dict[str, List[str]] = {}
+		segment_to_composites: Dict[str, Dict[str, List[str]]] = {}
 		current_segment_base: Optional[str] = None
-		skipping_composite = False
+		current_composite: Optional[str] = None
 
 		for raw_line in self.lines[start:end]:
 			line = raw_line.rstrip("\n")
@@ -121,42 +124,39 @@ class SchemaParser:
 				seg_name = m_hdr.group(1)
 				current_segment_base = seg_name.split(":")[0]
 				segment_to_elements.setdefault(current_segment_base, [])
-				skipping_composite = False
+				segment_to_composites.setdefault(current_segment_base, {})
+				current_composite = None
 				continue
 
 			if current_segment_base is None:
 				continue
 
-			if skipping_composite and not line.strip():
-				skipping_composite = False
+			stripped = line.strip()
+			if not stripped:
+				# blank line terminates a composite block if any
+				current_composite = None
 				continue
 
-			# Detect start of composite and skip its inner numeric lines
-			if composite_hdr_re.match(line.strip()):
-				if not line.strip().startswith("Segment") and not element_code_re.match(line):
-					skipping_composite = True
-					continue
-
-			if skipping_composite:
+			# Detect start of composite and prepare to capture its sub-codes
+			m_comp = composite_hdr_re.match(stripped)
+			if m_comp and not stripped.startswith("Segment"):
+				comp_name = m_comp.group(1)
+				current_composite = comp_name
+				segment_to_composites[current_segment_base].setdefault(comp_name, [])
 				continue
 
 			m_elem = element_code_re.match(line)
 			if m_elem:
 				code = m_elem.group(1)
-				segment_to_elements[current_segment_base].append(code)
+				if current_composite is None:
+					segment_to_elements[current_segment_base].append(code)
+				else:
+					segment_to_composites[current_segment_base][current_composite].append(code)
 
-		# Deduplicate while preserving order per segment
-		for seg_name, elements in list(segment_to_elements.items()):
-			seen: set = set()
-			deduped: List[str] = []
-			for code in elements:
-				if code not in seen:
-					deduped.append(code)
-					seen.add(code)
-			segment_to_elements[seg_name] = deduped
+		# Keep original order and duplicates to preserve positional semantics
 
 		logger.info("Parsed input record details for %d segments", len(segment_to_elements))
-		return ParsedInputRecordDetails(segment_to_elements=segment_to_elements)
+		return ParsedInputRecordDetails(segment_to_elements=segment_to_elements, segment_to_composites=segment_to_composites)
 
 	def parse_output_branching(self) -> ParsedOutputBranching:
 		start, end = self._find_section_bounds("OUTPUT Branching Diagram", "OUTPUT Record Details")
@@ -275,11 +275,12 @@ def build_edi_json(
 ) -> Dict[str, Dict[str, Dict[str, str]]]:
 	result: Dict[str, Dict[str, Dict[str, str]]] = {}
 	for occ in occurrences:
-		# Compute 4-digit code in steps of 100 starting at 0100
-		seq_val = occ.order_index * 100
+		# Compute 4-digit code; start at 0200 as requested
+		seq_val = (occ.order_index + 1) * 100
 		seq_str = f"{seq_val:04d}"
 		key = f"{occ.name}___{seq_str}___Segment"
 		element_codes = input_details.segment_to_elements.get(occ.name, [])
+		composites = input_details.segment_to_composites.get(occ.name, {})
 
 		segment_map: Dict[str, Dict[str, str]] = {}
 		position_index = 0
@@ -289,6 +290,17 @@ def build_edi_json(
 			trimmed = str(int(code)) if code.isdigit() else code.lstrip("0") or code
 			field_key = f"{trimmed}_{position_index}"
 			segment_map[field_key] = {"value": "", "position": f"{position_index:02d}"}
+
+		# Add composites as nested objects
+		for comp_name, codes in composites.items():
+			comp_map: Dict[str, Dict[str, str]] = {}
+			inner_pos = 0
+			for code in codes:
+				inner_pos += 1
+				trimmed = str(int(code)) if code.isdigit() else code.lstrip("0") or code
+				field_key = f"{trimmed}_{inner_pos}"
+				comp_map[field_key] = {"value": "", "position": f"{inner_pos:02d}"}
+			segment_map[comp_name] = comp_map
 
 		result[key] = segment_map
 
