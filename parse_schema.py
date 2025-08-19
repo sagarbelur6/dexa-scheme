@@ -153,7 +153,25 @@ class SchemaParser:
 				else:
 					segment_to_composites[current_segment_base][current_composite].append(code)
 
-		# Keep original order and duplicates to preserve positional semantics
+		# Keep original order while removing duplicates across occurrences
+		for seg_name, elements in list(segment_to_elements.items()):
+			seen_top: set = set()
+			unique_top: List[str] = []
+			for code in elements:
+				if code not in seen_top:
+					unique_top.append(code)
+					seen_top.add(code)
+			segment_to_elements[seg_name] = unique_top
+
+		for seg_name, comp_map in list(segment_to_composites.items()):
+			for comp_name, codes in list(comp_map.items()):
+				seen_c: set = set()
+				unique_c: List[str] = []
+				for code in codes:
+					if code not in seen_c:
+						unique_c.append(code)
+						seen_c.add(code)
+				segment_to_composites[seg_name][comp_name] = unique_c
 
 		logger.info("Parsed input record details for %d segments", len(segment_to_elements))
 		return ParsedInputRecordDetails(segment_to_elements=segment_to_elements, segment_to_composites=segment_to_composites)
