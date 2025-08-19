@@ -1,0 +1,555 @@
+{
+  "ZC1": {
+    "@shipmentIdentificationNumber": "",
+    "@equipmentInitial": "",
+    "@equipmentNumber": "",
+    "@transactionReferenceNumber": "",
+    "@transactionReferenceDate": "",
+    "@correctionIndicator": "",
+    "@standardCarrierAlphaCode": "",
+    "@transportationMethodTypeCode": "",
+    "@equipmentNumberCheckDigit": ""
+  },
+  "BX": {
+    "@transactionSetPurposeCode": "",
+    "@shipmentMethodofPayment": "",
+    "@standardCarrierAlphaCode": "",
+    "@weightUnitCode": "",
+    "@shipmentQualifier": "",
+    "@sectionSevenCode": "",
+    "@capacityLoadCode": "",
+    "@statusReportRequestCode": "",
+    "@applicationType": ""
+  },
+  "BNX": {
+    "@shipmentWeightCode": "",
+    "@referencedPatternIdentifier": "",
+    "@billingCode": "",
+    "@repetitivePatternNumber": ""
+  },
+  "N9": [
+    {
+      "@referenceIdentification": "",
+      "@date": "",
+      "@time": "",
+      "@timeCode": ""
+    }
+  ],
+  "C040": {
+    "@referenceIdentification": "",
+    "@referenceIdentification2": "",
+    "@referenceIdentification3": ""
+  },
+  "CM": [
+    {
+      "@flightVoyageNumber": "",
+      "@portorTerminalFunctionCode": "",
+      "@portName": "",
+      "@date": "",
+      "@bookingNumber": "",
+      "@standardCarrierAlphaCode": "",
+      "@standardCarrierAlphaCode2": "",
+      "@date2": "",
+      "@vesselName": "",
+      "@pierNumber": "",
+      "@pierName": "",
+      "@terminalName": "",
+      "@stateorProvinceCode": "",
+      "@countryCode": "",
+      "@referenceIdentification": "",
+      "@correctionIndicator": ""
+    }
+  ],
+  "DTM": [
+    {
+      "@dateTimeQualifier": "",
+      "@date": "",
+      "@time": "",
+      "@timeCode": "",
+      "@dateTimePeriod": ""
+    }
+  ],
+  "N7": {
+    "@equipmentInitial": "",
+    "@equipmentNumber": "",
+    "@weight": "",
+    "@weightQualifier": "",
+    "@tareWeight": "",
+    "@weightAllowance": "",
+    "@dunnage": "",
+    "@volume": "",
+    "@volumeUnitQualifier": "",
+    "@ownershipCode": "",
+    "@equipmentDescriptionCode": "",
+    "@standardCarrierAlphaCode": "",
+    "@temperatureControl": "",
+    "@position": "",
+    "@equipmentLength": "",
+    "@tareQualifierCode": "",
+    "@weightUnitCode": "",
+    "@equipmentNumberCheckDigit": "",
+    "@typeofServiceCode": "",
+    "@height": "",
+    "@width": "",
+    "@equipmentType": "",
+    "@standardCarrierAlphaCode2": "",
+    "@carTypeCode": ""
+  },
+  "EM": {
+    "@weightUnitCode": "",
+    "@weight": "",
+    "@volumeUnitQualifier": "",
+    "@volume": "",
+    "@countryCode": "",
+    "@constructionType": "",
+    "@date": ""
+  },
+  "IC": {
+    "@equipmentInitial": "",
+    "@equipmentNumber": "",
+    "@tareWeight": "",
+    "@tareQualifierCode": "",
+    "@standardCarrierAlphaCode": "",
+    "@equipmentLength": "",
+    "@standardCarrierAlphaCode2": "",
+    "@chassisType": "",
+    "@equipmentNumberCheckDigit": ""
+  },
+  "IM": {
+    "@waterMovementCode": "",
+    "@specialHandlingCode": "",
+    "@inlandTransportationCode": ""
+  },
+  "M12": [
+    {
+      "@customsEntryTypeCode": "",
+      "@customsEntryNumber": "",
+      "@locationIdentifier": "",
+      "@locationIdentifier2": "",
+      "@customsShipmentValue": "",
+      "@standardCarrierAlphaCode": "",
+      "@referenceIdentification": "",
+      "@vesselName": "",
+      "@yesNoConditionorResponseCode": "",
+      "@date": "",
+      "@locationIdentifier3": ""
+    }
+  ],
+  "G4": {
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@name": "",
+    "@date": "",
+    "@time": "",
+    "@scaleTypeCode": ""
+  },
+  "M7": [
+    {
+      "@sealNumber": "",
+      "@sealNumber2": "",
+      "@sealNumber3": "",
+      "@sealNumber4": "",
+      "@entityIdentifierCode": ""
+    }
+  ],
+  "N5": {
+    "@equipmentLength": "",
+    "@weightCapacity": "",
+    "@cubicCapacity": "",
+    "@carTypeCode": "",
+    "@metricQualifier": "",
+    "@height": "",
+    "@ladingPercentage": "",
+    "@ladingPercentQualifier": "",
+    "@equipmentDescriptionCode": ""
+  },
+  "H5": {
+    "@carServiceOrderCode": "",
+    "@cityName": "",
+    "@stateorProvinceCode": ""
+  },
+  "GA": [
+    {
+      "@fumigatedCleanedIndicator": "",
+      "@commodityCode": "",
+      "@referenceIdentification": "",
+      "@week": "",
+      "@unloadTerminalElevatorCode": "",
+      "@date": "",
+      "@number": "",
+      "@locationIdentifier": "",
+      "@stateorProvinceCode": "",
+      "@percentQualifier": "",
+      "@percentageasDecimal": ""
+    }
+  ],
+  "IMA": [
+    {
+      "@movementAuthorityCode": "",
+      "@standardCarrierAlphaCode": "",
+      "@tariffApplicationCode": "",
+      "@tariffApplicationCode2": "",
+      "@rejectReasonCode": ""
+    }
+  ],
+  "N8": [
+    {
+      "@waybillNumber": "",
+      "@date": "",
+      "@crossReferenceTypeCode": "",
+      "@equipmentInitial": "",
+      "@equipmentNumber": "",
+      "@waybillNumber2": "",
+      "@date2": "",
+      "@cityName": "",
+      "@stateorProvinceCode": "",
+      "@standardCarrierAlphaCode": ""
+    }
+  ],
+  "N8A": [
+    {
+      "@waybillNumber": "",
+      "@date": "",
+      "@referenceIdentification": "",
+      "@cityName": "",
+      "@stateorProvinceCode": "",
+      "@standardCarrierAlphaCode": "",
+      "@equipmentInitial": "",
+      "@equipmentNumber": ""
+    }
+  ],
+  "V9": {
+    "@eventCode": "",
+    "@event": "",
+    "@date": "",
+    "@time": "",
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@countryCode": "",
+    "@statusReasonCode": "",
+    "@standardPointLocationCode": "",
+    "@quantity": "",
+    "@trainDelayReasonCode": "",
+    "@timeCode": "",
+    "@quantity2": "",
+    "@standardPointLocationCode2": "",
+    "@totalEquipment": "",
+    "@totalEquipment2": "",
+    "@totalEquipment3": "",
+    "@weight": "",
+    "@length": ""
+  },
+  "F9": {
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@countryCode": "",
+    "@cityName2": "",
+    "@stateorProvinceCode2": "",
+    "@standardPointLocationCode": "",
+    "@postalCode": "",
+    "@standardPointLocationCode2": "",
+    "@postalCode2": "",
+    "@countryCode2": ""
+  },
+  "D9": {
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@countryCode": "",
+    "@cityName2": "",
+    "@stateorProvinceCode2": "",
+    "@standardPointLocationCode": "",
+    "@postalCode": "",
+    "@standardPointLocationCode2": "",
+    "@postalCode2": "",
+    "@countryCode2": ""
+  },
+  "N1": {
+    "@entityIdentifierCode": "",
+    "@name": "",
+    "@identificationCodeQualifier": "",
+    "@identificationCode": "",
+    "@entityRelationshipCode": "",
+    "@entityIdentifierCode2": ""
+  },
+  "N2": [
+    {
+      "@name": "",
+      "@name2": ""
+    }
+  ],
+  "N3": [
+    {
+      "@addressInformation": "",
+      "@addressInformation2": ""
+    }
+  ],
+  "N4": {
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@postalCode": "",
+    "@countryCode": "",
+    "@locationQualifier": "",
+    "@locationIdentifier": "",
+    "@countrySubdivisionCode": ""
+  },
+  "BL": [
+    {
+      "@rebillReasonCode": "",
+      "@freightStationAccountingCode": "",
+      "@standardPointLocationCode": "",
+      "@cityName": "",
+      "@stateorProvinceCode": "",
+      "@countryCode": "",
+      "@standardPointLocationCode2": "",
+      "@cityName2": "",
+      "@stateorProvinceCode2": "",
+      "@countryCode2": "",
+      "@standardCarrierAlphaCode": "",
+      "@standardCarrierAlphaCode2": "",
+      "@standardCarrierAlphaCode3": "",
+      "@standardCarrierAlphaCode4": "",
+      "@standardCarrierAlphaCode5": "",
+      "@standardCarrierAlphaCode6": ""
+    }
+  ],
+  "S1": {
+    "@stopSequenceNumber": "",
+    "@name": "",
+    "@identificationCode": "",
+    "@standardCarrierAlphaCode": "",
+    "@accomplishCode": ""
+  },
+  "S2": [
+    {
+      "@stopSequenceNumber": "",
+      "@addressInformation": "",
+      "@addressInformation2": ""
+    }
+  ],
+  "S9": {
+    "@stopSequenceNumber": "",
+    "@standardPointLocationCode": "",
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@countryCode": "",
+    "@stopReasonCode": "",
+    "@locationQualifier": "",
+    "@locationIdentifier": ""
+  },
+  "R2": [
+    {
+      "@standardCarrierAlphaCode": "",
+      "@routingSequenceCode": "",
+      "@cityName": "",
+      "@standardPointLocationCode": "",
+      "@intermodalServiceCode": "",
+      "@intermediateSwitchCarrier": "",
+      "@intermediateSwitchCarrier2": "",
+      "@invoiceNumber": "",
+      "@date": "",
+      "@typeofServiceCode": "",
+      "@routeDescription": ""
+    }
+  ],
+  "R9": {
+    "@routeCode": "",
+    "@agentShipperRoutingCode": "",
+    "@intermodalServiceCode": "",
+    "@standardCarrierAlphaCode": "",
+    "@actionCode": "",
+    "@standardCarrierAlphaCode2": "",
+    "@routeCode2": ""
+  },
+  "E1": {
+    "@name": "",
+    "@identificationCode": ""
+  },
+  "E4": {
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@postalCode": "",
+    "@countryCode": "",
+    "@addressInformation": ""
+  },
+  "E5": [
+    {
+      "@standardCarrierAlphaCode": "",
+      "@routingSequenceCode": "",
+      "@cityName": "",
+      "@standardPointLocationCode": ""
+    }
+  ],
+  "PI": {
+    "@referenceIdentification": "",
+    "@regulatoryAgencyCode": "",
+    "@tariffAgencyCode": "",
+    "@issuingCarrierIdentifier": "",
+    "@contractSuffix": "",
+    "@tariffItemNumber": "",
+    "@tariffSupplementIdentifier": "",
+    "@tariffSectionNumber": "",
+    "@contractSuffix2": "",
+    "@date": "",
+    "@date2": "",
+    "@alternationPrecedenceCode": "",
+    "@alternationPrecedenceCode2": "",
+    "@serviceLevelCode": ""
+  },
+  "H3": [
+    {
+      "@specialHandlingCode": "",
+      "@specialHandlingDescription": "",
+      "@protectiveServiceCode": "",
+      "@ventInstructionCode": "",
+      "@tariffApplicationCode": ""
+    }
+  ],
+  "PS": [
+    {
+      "@protectiveServiceRuleCode": "",
+      "@protectiveServiceCode": "",
+      "@temperature": "",
+      "@standardCarrierAlphaCode": "",
+      "@cityName": "",
+      "@stateorProvinceCode": "",
+      "@weight": "",
+      "@temperature2": ""
+    }
+  ],
+  "LX": {
+    "@assignedNumber": ""
+  },
+  "L5": [
+    {
+      "@ladingLineItemNumber": "",
+      "@ladingDescription": "",
+      "@commodityCode": "",
+      "@commodityCodeQualifier": "",
+      "@packagingCode": "",
+      "@marksandNumbers": "",
+      "@marksandNumbersQualifier": "",
+      "@commodityCodeQualifier2": "",
+      "@commodityCode2": "",
+      "@compartmentIDCode": ""
+    }
+  ],
+  "X1": [
+    {
+      "@exportLicenseNumber": "",
+      "@exportLicenseStatusCode": "",
+      "@date": "",
+      "@exportLicenseSymbolCode": "",
+      "@exportLicenseControlCode": "",
+      "@countryCode": "",
+      "@scheduleBCode": "",
+      "@internationalDomesticCode": "",
+      "@ladingQuantity": "",
+      "@ladingValue": "",
+      "@exportFilingKeyCode": "",
+      "@unitPrice": "",
+      "@identificationCode": "",
+      "@locationIdentifier": ""
+    }
+  ],
+  "T1": {
+    "@assignedNumber": "",
+    "@waybillNumber": "",
+    "@date": "",
+    "@standardCarrierAlphaCode": "",
+    "@cityName": "",
+    "@stateorProvinceCode": "",
+    "@standardPointLocationCode": "",
+    "@transitRegistrationNumber": "",
+    "@transitLevelCode": "",
+    "@referenceIdentification": ""
+  },
+  "T2": [
+    {
+      "@assignedNumber": "",
+      "@ladingDescription": "",
+      "@weight": "",
+      "@weightQualifier": "",
+      "@freightRate": "",
+      "@rateValueQualifier": "",
+      "@freightRate2": "",
+      "@rateValueQualifier2": "",
+      "@cityName": "",
+      "@cityName2": "",
+      "@throughSurchargePercent": ""
+    }
+  ],
+  "T3": [
+    {
+      "@assignedNumber": "",
+      "@standardCarrierAlphaCode": "",
+      "@routingSequenceCode": "",
+      "@cityName": "",
+      "@standardPointLocationCode": "",
+      "@equipmentInitial": "",
+      "@equipmentNumber": ""
+    }
+  ],
+  "T6": {
+    "@assignedNumber": "",
+    "@freightRate": "",
+    "@rateValueQualifier": "",
+    "@cityName": "",
+    "@freightRate2": "",
+    "@rateValueQualifier2": "",
+    "@cityName2": ""
+  },
+  "T8": [
+    {
+      "@assignedNumber": ""
+    }
+  ],
+  "LS": {
+    "@loopIdentifierCode": ""
+  },
+  "LE": {
+    "@loopIdentifierCode": ""
+  },
+  "PER": [
+    {
+      "@contactFunctionCode": "",
+      "@name": "",
+      "@communicationNumberQualifier": "",
+      "@communicationNumber": "",
+      "@communicationNumber2": "",
+      "@communicationNumber3": "",
+      "@contactInquiryReference": ""
+    }
+  ],
+  "LH2": [
+    {
+      "@hazardousClassification": "",
+      "@hazardousClassQualifier": "",
+      "@hazardousPlacardNotation": "",
+      "@hazardousEndorsement": "",
+      "@reportableQuantityCode": "",
+      "@temperature": "",
+      "@temperature2": "",
+      "@temperature3": "",
+      "@weightUnitCode": "",
+      "@netExplosiveQuantity": ""
+    }
+  ],
+  "LHR": {
+    "@referenceIdentification": "",
+    "@date": ""
+  },
+  "XH": {
+    "@currencyCode": "",
+    "@relatedCompanyIndicationCode": "",
+    "@amount": "",
+    "@block20Code": "",
+    "@chemicalAnalysisPercentage": "",
+    "@unitPrice": ""
+  },
+  "X7": [
+    {}
+  ],
+  "SE": {
+    "@numberofIncludedSegments": ""
+  }
+}
